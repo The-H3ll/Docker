@@ -1,0 +1,29 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    select.exp                                         :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: molabhai <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/02/24 15:59:00 by molabhai          #+#    #+#              #
+#    Updated: 2020/03/04 16:25:01 by molabhai         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+#!/usr/bin/expect
+
+spawn dpkg -i mysql-apt-config_0.8.15-1_all.deb
+
+expect	"Which MySQL product do you wish to configure?"
+
+send -- "1\r"
+
+expect	"Wich server version do you wish to receive?"
+
+send -- "1\r"
+
+expect	"Which MySQL product do you wish to configure?"
+
+send -- "4\r"
+
+expect eof
